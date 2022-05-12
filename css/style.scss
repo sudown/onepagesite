@@ -1,0 +1,135 @@
+//Cores
+$primaryHtmlColor: #E44D26;
+$secondaryHtmlColor: #F16529;
+$primaryCssColor: #264DE4;
+$secondaryCssColor: #2965F1;
+$primaryJsColor: #E5A228;
+$secondaryJsColor: #F1BF26;
+$backgroundDefaultColor: #FFFFFF;
+$backgroundSecondaryColor: #6dacbe;
+$fontDefaultColor: #FFFFFF;
+$fontSecondaryColor: #000000;
+$fontTertiaryColor: #6dacbe;
+
+$breakpoints: (
+    xs: 0,        //Smartphones em modo retrato
+    sm: 576px,    //Smartphones em modo paisagem ou Tablets em modo retrato
+    md: 768px,    //Tablets em modo paisagem
+    lg: 992px,    //Desktops
+    xl: 1200px,   //Desktops com alta definição HD e FHD
+    xxl: 2000px   //Desktops com ultra alta definição QHD e UHD
+  );
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; 
+    h1, h2, h3 {
+        margin-bottom: 0.8em;
+    }
+    p {
+        margin-bottom: 0.8em;
+        text-align: justify;
+    }
+    font-family:Arial;
+}
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-details {
+    width: 70vw;
+    padding: 3vw;
+}
+
+//smartphone modo retrato
+@media (min-width: map-get($breakpoints, xs)) {
+    .section-details {
+        width: 70vw;
+        padding: 3vw;
+    }
+    .botao {
+        background-color: $backgroundSecondaryColor;
+        color: $fontDefaultColor;
+        padding: 10px 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        width: 45vw;
+        font-weight: 100;
+        text-align: center;
+    }
+    #quem-somos {
+        background: url(/img/bg-somos-celular-retrato.png);
+        background-repeat: no-repeat;
+        height: 100vh;
+        h2 {
+            color: $fontTertiaryColor;
+        }
+        p {
+            color: $fontSecondaryColor;
+        }
+    }
+}
+
+//smartphone modo paisagem
+@media (min-width: map-get($breakpoints, sm)) and (orientation: landscape){
+    body {
+        background-color:#264DE4;
+    }
+}
+
+//tablet modo retrato
+@media (min-width: map-get($breakpoints, sm)) and (orientation: portrait){
+    body {
+        background-color:#E44D26;
+    }
+}
+
+//Tablets em modo paisagem
+@media (min-width: map-get($breakpoints, md)) {
+    body {
+        background-color: #E5A228
+    }
+}
+
+//Desktops com alta definição HD e FHD
+@media (min-width: map-get($breakpoints, xl)) {
+    body {
+        background-color: #FFFFFF;
+    }
+    #quem-somos {
+        background: url(/img/bg-somos-desktop.png);
+        background-repeat: repeat;
+        height: 100vh;
+        h2 {
+            color: $fontTertiaryColor;
+        }
+        p {
+            color: $fontSecondaryColor;
+        }
+    }
+    .botao {
+    background-color: $backgroundSecondaryColor;
+    color: $fontDefaultColor;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: 200px;
+    font-weight: 900;
+    text-align: center;
+    }
+}

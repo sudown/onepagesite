@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial;
+}
+
+* h1, * h2, * h3 {
+  margin-bottom: 0.8em;
+}
+
+* p {
+  margin-bottom: 0.8em;
+  text-align: justify;
+}
+
+.flex-container-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-container-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-details {
+  width: 70vw;
+  padding: 3vw;
+}
+
+@media (min-width: 0) {
+  .section-details {
+    width: 70vw;
+    padding: 3vw;
+  }
+  .botao {
+    background-color: #6dacbe;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: 45vw;
+    font-weight: 100;
+    text-align: center;
+  }
+  #quem-somos {
+    background: url(/img/bg-somos-celular-retrato.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  #quem-somos h2 {
+    color: #6dacbe;
+  }
+  #quem-somos p {
+    color: #000000;
+  }
+}
+
+@media (min-width: 576px) and (orientation: landscape) {
+  body {
+    background-color: #264DE4;
+  }
+}
+
+@media (min-width: 576px) and (orientation: portrait) {
+  body {
+    background-color: #E44D26;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: #E5A228;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background-color: #FFFFFF;
+  }
+  #quem-somos {
+    background: url(/img/bg-somos-desktop.png);
+    background-repeat: repeat;
+    height: 100vh;
+  }
+  #quem-somos h2 {
+    color: #6dacbe;
+  }
+  #quem-somos p {
+    color: #000000;
+  }
+  .botao {
+    background-color: #6dacbe;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: 200px;
+    font-weight: 900;
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=style.css.map */
