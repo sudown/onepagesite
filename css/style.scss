@@ -1,16 +1,25 @@
-//Cores
-$primaryHtmlColor: #E44D26;
-$secondaryHtmlColor: #F16529;
-$primaryCssColor: #264DE4;
-$secondaryCssColor: #2965F1;
-$primaryJsColor: #E5A228;
-$secondaryJsColor: #F1BF26;
-$backgroundDefaultColor: #FFFFFF;
-$backgroundSecondaryColor: #6dacbe;
-$fontDefaultColor: #FFFFFF;
-$fontSecondaryColor: #000000;
-$fontTertiaryColor: #6dacbe;
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
 
+:root {
+    --fonte-primaria: 'Roboto', 'Arial';
+    --fonte-secundaria: 'Open sans', 'Arial';
+    --fonte-links: 'Mali', 'Arial';
+    --cor-primaria: #1b98e0;
+    --cor-secundaria: #e8f1f2;
+}
+
+/********Outras cores**********
+#247ba0
+#006494
+#13293d
+************************/
+
+/********Exemplo**********/
+h1 {
+    font-family: var(--fonte-primaria);
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
 $breakpoints: (
     xs: 0,        //Smartphones em modo retrato
     sm: 576px,    //Smartphones em modo paisagem ou Tablets em modo retrato
@@ -29,10 +38,15 @@ $breakpoints: (
         margin-bottom: 0.8em;
     }
     p {
+        font-size: 18px;
         margin-bottom: 0.8em;
-        text-align: justify;
+        text-align:justify;
+        line-height: 21px;
     }
-    font-family:Arial;
+    font-family: var(--fonte-primaria);
+    mark {
+        background-color: var(--cor-primaria);
+    }
 }
 
 .flex-container-row {
@@ -48,39 +62,43 @@ $breakpoints: (
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items:center;
+    //width: 100vw;
 }
 
 .section-details {
-    width: 70vw;
-    padding: 3vw;
+    width: 100vw;
+    padding: 0vw;
 }
 
 //smartphone modo retrato
 @media (min-width: map-get($breakpoints, xs)) {
     .section-details {
-        width: 70vw;
+        width: 90vw;
+        height: 90vh;
         padding: 3vw;
+        margin-top: 6vh;
+        justify-content: space-between;
     }
     .botao {
-        background-color: $backgroundSecondaryColor;
-        color: $fontDefaultColor;
+        background-color: var(--cor-secundaria);
+        color: var(--cor-primaria);
         padding: 10px 20px;
-        border-radius: 30px;
+        border-radius: 10px;
         text-decoration: none;
-        width: 45vw;
-        font-weight: 100;
+        width: 84vw;
+        font-weight: 900;
         text-align: center;
+        margin-top: 2vh;
     }
-    #quem-somos {
-        background: url(/img/bg-somos-celular-retrato.png);
-        background-repeat: no-repeat;
+    #sobre {
+        background-color: var(--cor-primaria);
         height: 100vh;
         h2 {
-            color: $fontTertiaryColor;
+            color: var(--cor-secundaria);
         }
         p {
-            color: $fontSecondaryColor;
+            color: var(--cor-secundaria);
         }
     }
 }
@@ -88,7 +106,35 @@ $breakpoints: (
 //smartphone modo paisagem
 @media (min-width: map-get($breakpoints, sm)) and (orientation: landscape){
     body {
-        background-color:#264DE4;
+        background-color:red;
+    }
+    .section-details {
+        width: 90vw;
+        height: 100vh;
+        padding: 3vw;
+        margin-top: 10vh;
+        justify-content: space-between;
+    }
+    .botao {
+        background-color: var(--cor-secundaria);
+        color: var(--cor-primaria);
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        width: 84vw;
+        font-weight: 900;
+        text-align: center;
+        margin-top: 2vh;
+    }
+    #sobre {
+        background-color: var(--cor-primaria);
+        height: 100vh;
+        h2 {
+            color: var(--cor-secundaria);
+        }
+        p {
+            color: var(--cor-secundaria);
+        }
     }
 }
 
@@ -96,6 +142,36 @@ $breakpoints: (
 @media (min-width: map-get($breakpoints, sm)) and (orientation: portrait){
     body {
         background-color:#E44D26;
+    }
+    .section-details {
+        width: 90vw;
+        height: 100vh;
+        padding: 3vw;
+        margin-top: 10vh;
+        justify-content: space-between;
+    }
+    .botao {
+        background-color: var(--cor-secundaria);
+        color: var(--cor-primaria);
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        width: 84vw;
+        font-weight: 900;
+        text-align: center;
+        margin-top: 2vh;
+    }
+    #sobre {
+        background-color: var(--cor-primaria);
+        height: 100vh;
+        h2 {
+            color: var(--cor-secundaria);
+        }
+        p {
+            margin-top: 7vh;
+            color: var(--cor-secundaria);
+            font-size: large;
+        }
     }
 }
 
@@ -111,20 +187,20 @@ $breakpoints: (
     body {
         background-color: #FFFFFF;
     }
-    #quem-somos {
-        background: url(/img/bg-somos-desktop.png);
+    #sobre {
+
         background-repeat: repeat;
         height: 100vh;
         h2 {
-            color: $fontTertiaryColor;
+            color: var(--fonte-secundaria);
         }
         p {
-            color: $fontSecondaryColor;
+            color: var(--cor-secundaria);
         }
     }
     .botao {
-    background-color: $backgroundSecondaryColor;
-    color: $fontDefaultColor;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
     padding: 10px 20px;
     border-radius: 30px;
     text-decoration: none;
